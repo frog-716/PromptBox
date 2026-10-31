@@ -284,7 +284,7 @@ onBeforeUnmount(() => {
 
 .card-time {
   flex-shrink: 0;
-  color: #9a928c;
+  color: var(--pb-text-faint);
   font-size: var(--pb-text-xs);
   font-variant-numeric: tabular-nums;
 }

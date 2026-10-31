@@ -127,10 +127,10 @@ onBeforeUnmount(() => {
   gap: var(--pb-space-8);
   margin-top: var(--pb-space-12);
   padding: var(--pb-space-8) var(--pb-space-12);
-  border: 1px solid #dbe6f0;
+  border: 1px solid var(--pb-border);
   border-radius: var(--pb-radius-4);
-  background: rgb(239 246 255 / 55%);
-  color: #355977;
+  background: var(--pb-surface-soft);
+  color: var(--pb-text-soft);
   font-size: var(--pb-text-sm);
   line-height: 1.5;
 }

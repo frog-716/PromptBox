@@ -214,7 +214,7 @@ onBeforeUnmount(() => {
   width: 100%;
   min-width: 0;
   border: 0;
-  border-bottom: 2px solid #8cb7da;
+  border-bottom: 2px solid var(--pb-accent);
   border-radius: var(--pb-radius-none);
   padding: var(--pb-space-4) 0;
   background: transparent;
@@ -244,7 +244,7 @@ onBeforeUnmount(() => {
   min-height: 25px;
   border: 0;
   padding: var(--pb-space-4);
-  background: #f7f5f3;
+  background: var(--pb-surface-soft);
   color: var(--pb-text-muted);
   opacity: 0;
   transition: opacity .14s ease, color .14s ease;

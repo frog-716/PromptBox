@@ -178,7 +178,7 @@ const emit = defineEmits<{
   border-radius: var(--pb-radius);
   padding: var(--pb-space-px) var(--pb-space-8);
   font-size: var(--pb-text-sm);
-  color: #7a746f;
+  color: var(--pb-text-soft);
   background: var(--pb-surface-soft);
 }
 
