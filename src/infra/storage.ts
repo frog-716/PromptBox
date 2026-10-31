@@ -1,6 +1,9 @@
 /**
  * 存储适配层：唯一直接读写 chrome.storage.local 的地方。
  * 数据清洗在纯函数模块中完成，便于单独回归各种旧存储形状。
+ *
+ * 并发写入用 navigator.locks（Web 平台 API）：wxt 的 browser 抽象不覆盖它，
+ * 因此这里直接使用，而不是绕 browser。
  */
 
 import { browser } from 'wxt/browser';
@@ -9,7 +12,7 @@ import type { PromptBoxData } from '@/domain/types';
 import { STORAGE_KEY } from '@/shared/constants';
 import { sanitizeData } from '@/infra/sanitize';
 
-const DATA_LOCK = 'prompt-box:data-write';
+const DATA_LOCK = 'promptbox:data-write';
 
 /** 本地构建固定的存储状态；不再区分共享模式。 */
 export interface StorageStatus {
@@ -61,7 +64,7 @@ export function onDataChanged(listener: (data: PromptBoxData) => void): () => vo
       .then((data) => {
         if (request === latestRequest) listener(data);
       })
-      .catch((error: unknown) => console.error('[Prompt Box] 同步本地数据失败：', error));
+      .catch((error: unknown) => console.error('[PromptBox] 同步本地数据失败：', error));
   };
 
   browser.storage.onChanged.addListener(handler);

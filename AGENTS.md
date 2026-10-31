@@ -1,4 +1,4 @@
-# AGENTS.md — Prompt-Box 工程规范
+# AGENTS.md — PromptBox 工程规范
 
 > 这份文件是本项目**唯一的工程规范**。任何 AI 编码工具接手时，先读这里。
 >
@@ -9,7 +9,7 @@
 
 ## 1. 这个项目是什么
 
-Prompt-Box 是一个 Chrome 扩展（Manifest V3），只做三件事：
+PromptBox 是一个 Chrome 扩展（Manifest V3），只做三件事：
 
 1. **记** —— 随时把提示词存下来；
 2. **分** —— 用文件夹（单选归属）和标签（多选标记）分类；
@@ -77,7 +77,7 @@ src/
 │   ├── clipboard.ts        # 复制，含降级方案
 │   └── markdown-export.ts  # Markdown 文件下载
 ├── ui/
-│   ├── sidepanel/App.vue   # 侧边栏根组件（view 状态机：list/editor/settings）
+│   ├── app/App.vue         # 主界面根组件（侧边栏与独立标签页共用；view 状态机：list/editor/settings）
 │   ├── components/         # 可复用组件（SettingsView.vue = 设置视图；settings/ 下为设置面板）
 │   ├── composables/        # 状态编排
 │   └── styles/global.css   # 设计令牌 + 全局样式
@@ -134,7 +134,7 @@ WXT 输出目录为 `.output/chrome-local/chrome-mv3`，构建目标固定为 `c
 
 - 颜色、圆角、间距一律用 `global.css` 里的 CSS 变量，**不要写死色值**。
 - 组件只负责渲染与事件转发，状态放在 composables。
-- 主界面是三态视图：`sidepanel/App.vue` 用 `view` 状态机在 `list`（列表）/`editor`（编辑）/`settings`（设置）间切换，**不新开标签页**；设置入口在 `FilterBar` 操作区，`SettingsView` 通过 `@close` 返回列表。
+- 主界面是三态视图：`app/App.vue` 用 `view` 状态机在 `list`（列表）/`editor`（编辑）/`settings`（设置）间切换，**不新开标签页**；设置入口在 `FilterBar` 操作区，`SettingsView` 通过 `@close` 返回列表。
 - 破坏性操作（删除）用内联二次确认，不用 `window.confirm`。
 - 反馈用底部 toast，不用 alert。
 

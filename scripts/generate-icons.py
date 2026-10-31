@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""生成 Prompt-Box 扩展图标。
+"""生成 PromptBox 扩展图标。
 
 纯标准库实现（zlib + struct），不依赖 Pillow。
 以 4 倍超采样渲染后降采样，得到平滑边缘。

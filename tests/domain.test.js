@@ -128,7 +128,7 @@ test('Markdown 导出分开展示文件夹和标签，并按最近修改时间�
   assert.ok(markdown.indexOf('## 较新 \\[版本\\]') < markdown.indexOf('## 较早'));
   assert.match(markdown, /- 文件夹：工作\n- 标签：#工作、#灵感/);
   assert.match(markdown, /- 文件夹：未归类\n- 标签：无/);
-  assert.doesNotMatch(markdown, /修改时间|导出时间|空文件夹|prompt-box-markdown/);
+  assert.doesNotMatch(markdown, /修改时间|导出时间|空文件夹|promptbox-markdown/);
   assert.equal(serializeMarkdown({ ...data, prompts: [] }), '');
 });
 

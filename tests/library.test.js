@@ -37,7 +37,7 @@ test('两个界面通过真实共享写入入口保存、同步与报告冲突',
   let failRead = false;
   let delayedRead = null;
   let broadcastPaused = false;
-  const key = Symbol.for('prompt-box:test-browser');
+  const key = Symbol.for('promptbox:test-browser');
   const navigatorDescriptor = Object.getOwnPropertyDescriptor(navigator, 'locks');
   Object.defineProperty(navigator, 'locks', { configurable: true, value: {
     request(_name, _options, change) {
@@ -68,7 +68,7 @@ test('两个界面通过真实共享写入入口保存、同步与报告冲突',
       onChanged: { addListener: fn => listeners.add(fn), removeListener: fn => listeners.delete(fn) },
     },
   };
-  const browserModule = 'data:text/javascript,' + encodeURIComponent('export const browser = globalThis[Symbol.for("prompt-box:test-browser")];');
+  const browserModule = 'data:text/javascript,' + encodeURIComponent('export const browser = globalThis[Symbol.for("promptbox:test-browser")];');
   const storageModule = moduleUrl('src/infra/storage.ts', { 'wxt/browser': browserModule });
   const { useLibrary } = await import(moduleUrl('src/ui/composables/useLibrary.ts', { '@/infra/storage': storageModule }));
   const { updateData } = await import(storageModule);

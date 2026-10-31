@@ -114,6 +114,8 @@ export function collectTagStats(prompts: readonly Prompt[]): TagStat[] {
  * Prompt 是「改即换新对象」的不可变值，因此可按对象引用记忆：
  * 编辑后自然失效、旧对象被 GC 回收。这样搜索每敲一个字做全量过滤时，
  * 不必对长原文反复 toLowerCase()。
+ *
+ * 注：这是有意的性能缓存，不承载业务状态；领域结果仍只由纯函数决定。
  */
 const searchTextCache = new WeakMap<Prompt, { title: string; content: string }>();
 

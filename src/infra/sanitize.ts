@@ -5,6 +5,8 @@
  * 统一在读入边界转成领域模型，避免界面把仍然存在的数据当成空列表。
  */
 
+// 这里刻意保留相对路径 + .ts 扩展名：tests/ 直接用 Node 运行本模块，
+// 没有打包器的 @/ 别名，改成别名会导致测试加载失败。
 import type { Folder, Prompt, PromptBoxData } from '../domain/types.ts';
 import { normalizeFolderName, folderNameKey } from '../domain/folder.ts';
 import { normalizeTags } from '../domain/prompt.ts';

@@ -48,7 +48,7 @@ function handleExport(): void {
     });
     show('已导出 Markdown');
   } catch (error) {
-    console.error('[Prompt Box] 导出失败：', error);
+    console.error('[PromptBox] 导出失败：', error);
     show('导出失败，请重试', { tone: 'error' });
   }
 }
@@ -58,7 +58,7 @@ async function handleClear(): Promise<void> {
     await clearAll();
     show('已清空');
   } catch (error) {
-    console.error('[Prompt Box] 清空数据失败：', error);
+    console.error('[PromptBox] 清空数据失败：', error);
     show('清空失败，数据未更改', { tone: 'error' });
   }
 }
@@ -68,7 +68,7 @@ async function handleAddFolder(name: string): Promise<void> {
     const folder = await addFolder(name);
     show(folder ? `已添加「${folder.name}」` : '名称重复或为空', folder ? {} : { tone: 'error' });
   } catch (error) {
-    console.error('[Prompt Box] 添加文件夹失败：', error);
+    console.error('[PromptBox] 添加文件夹失败：', error);
     show('添加失败，数据未更改', { tone: 'error' });
   }
 }
@@ -79,7 +79,7 @@ async function handleRenameFolder(id: string, name: string): Promise<void> {
     if (result === 'duplicate') show('文件夹名称已存在', { tone: 'error' });
     else if (result === 'renamed') show('已重命名');
   } catch (error) {
-    console.error('[Prompt Box] 重命名文件夹失败：', error);
+    console.error('[PromptBox] 重命名文件夹失败：', error);
     show('重命名失败，数据未更改', { tone: 'error' });
   }
 }
@@ -89,7 +89,7 @@ async function handleRemoveFolder(id: string): Promise<void> {
     await removeFolder(id);
     show('文件夹已删除，提示词保留');
   } catch (error) {
-    console.error('[Prompt Box] 删除文件夹失败：', error);
+    console.error('[PromptBox] 删除文件夹失败：', error);
     show('删除失败，数据未更改', { tone: 'error' });
   }
 }
@@ -99,7 +99,7 @@ async function handleRenameTag(from: string, to: string): Promise<void> {
     await renameTagEverywhere(from, to);
     show('标签已更新');
   } catch (error) {
-    console.error('[Prompt Box] 重命名标签失败：', error);
+    console.error('[PromptBox] 重命名标签失败：', error);
     show('重命名失败，数据未更改', { tone: 'error' });
   }
 }
@@ -109,7 +109,7 @@ async function handleRemoveTag(tag: string): Promise<void> {
     await removeTagEverywhere(tag);
     show('标签已删除');
   } catch (error) {
-    console.error('[Prompt Box] 删除标签失败：', error);
+    console.error('[PromptBox] 删除标签失败：', error);
     show('删除失败，数据未更改', { tone: 'error' });
   }
 }

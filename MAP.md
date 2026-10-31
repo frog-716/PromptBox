@@ -1,4 +1,4 @@
-# Prompt-Box 项目地图
+# PromptBox 项目地图
 
 ## 结构与依赖
 
@@ -28,8 +28,8 @@
 ## 重要入口
 
 - `src/entrypoints/background.ts`：打开主界面标签页、右键保存选中文字。
-- `src/entrypoints/library/main.ts` → `src/ui/sidepanel/App.vue`：主界面标签页，提供记录、筛选、复制。
-- `src/ui/components/SettingsView.vue`：侧边栏内设置视图（`sidepanel/App.vue` 的
+- `src/entrypoints/library/main.ts` → `src/ui/app/App.vue`：主界面标签页，提供记录、筛选、复制。
+- `src/ui/components/SettingsView.vue`：侧边栏内设置视图（`app/App.vue` 的
   `view` 状态机 `list/editor/settings` 三态之一，可返回列表）：导出、文件夹与标签管理。
 - `src/ui/composables/useLibrary.ts`：界面状态、数据加载和写入编排。
 - `src/infra/storage.ts`：本地 `chrome.storage.local` 的唯一入口，Web Lock 串行读写；数据清洗在 `sanitize.ts`。

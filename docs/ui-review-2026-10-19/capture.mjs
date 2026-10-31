@@ -9,8 +9,8 @@ import { mkdtempSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 
-const EXT_DIR = resolve('/Users/frog/Projects/Prompt-Box/.output/chrome-local/chrome-mv3');
-const OUT_DIR = resolve('/Users/frog/Projects/Prompt-Box/docs/ui-review-2026-10-19/shots');
+const EXT_DIR = resolve('/Users/frog/Projects/PromptBox/.output/chrome-local/chrome-mv3');
+const OUT_DIR = resolve('/Users/frog/Projects/PromptBox/docs/ui-review-2026-10-19/shots');
 
 const CHROME_CANDIDATES = [
   // 品牌版 Chrome 137+ 已忽略 --load-extension，优先用 Playwright 缓存的 Chromium

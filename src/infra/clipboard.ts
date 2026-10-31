@@ -1,7 +1,7 @@
 /**
  * 剪贴板适配层。
  *
- * 这是 Prompt-Box 唯一「输出」提示词的方式：复制走，你自己粘贴到需要的地方。
+ * 这是 PromptBox 唯一「输出」提示词的方式：复制走，你自己粘贴到需要的地方。
  * 因此这里必须稳 —— 失败要如实返回 false，不能假装成功。
  */
 
@@ -34,7 +34,7 @@ function legacyCopy(text: string): boolean {
     holder.select();
     return document.execCommand('copy');
   } catch (error) {
-    console.error('[Prompt Box] 复制到剪贴板失败：', error);
+    console.error('[PromptBox] 复制到剪贴板失败：', error);
     return false;
   } finally {
     holder.remove();

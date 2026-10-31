@@ -46,7 +46,7 @@ async function saveSelection(text: string): Promise<void> {
       prompts: [prompt, ...current.prompts],
     }));
   } catch (error) {
-    console.error('[Prompt Box] 保存选中文字失败：', error);
+    console.error('[PromptBox] 保存选中文字失败：', error);
   }
 }
 
@@ -58,7 +58,7 @@ export default defineBackground(() => {
     }).sidePanel;
     if (sidePanel) {
       void sidePanel.setPanelBehavior({ openPanelOnActionClick: true })
-        .catch((error: unknown) => console.error('[Prompt Box] 启用 Chrome 侧边栏失败：', error));
+        .catch((error: unknown) => console.error('[PromptBox] 启用 Chrome 侧边栏失败：', error));
     } else {
       openLibraryInTab();
     }
@@ -81,6 +81,6 @@ function openLibraryInTab(): void {
   browser.action.onClicked.addListener(() => {
     void browser.tabs
       .create({ url: browser.runtime.getURL('/library.html') })
-      .catch((error: unknown) => console.error('[Prompt Box] 打开提示词本失败：', error));
+      .catch((error: unknown) => console.error('[PromptBox] 打开提示词本失败：', error));
   });
 }

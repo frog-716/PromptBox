@@ -8,9 +8,9 @@ import { fileURLToPath } from 'node:url';
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const chrome = process.env.CHROME_BIN ?? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const screenshots = [
-  { name: 'prompt-box-showcase.png', scenario: '', height: 820 },
-  { name: 'prompt-box-filters.png', scenario: 'filters', height: 360 },
-  { name: 'prompt-box-editor.png', scenario: 'editor', height: 840 },
+  { name: 'promptbox-showcase.png', scenario: '', height: 820 },
+  { name: 'promptbox-filters.png', scenario: 'filters', height: 360 },
+  { name: 'promptbox-editor.png', scenario: 'editor', height: 840 },
 ];
 
 if (!existsSync(chrome)) {
@@ -21,7 +21,7 @@ const server = await createServer({
   configFile: resolve(projectRoot, 'tools/showcase/vite.config.mjs'),
   server: { host: '127.0.0.1', port: 0, strictPort: false },
 });
-const profile = mkdtempSync(join(tmpdir(), 'prompt-box-showcase-'));
+const profile = mkdtempSync(join(tmpdir(), 'promptbox-showcase-'));
 
 try {
   await server.listen();

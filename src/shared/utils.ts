@@ -1,5 +1,8 @@
 /**
  * 通用工具函数。与业务无关，任何层都可以用。
+ *
+ * `createId` / `timestamp` 是给 domain 注入 id 与时间的唯一入口：
+ * domain 被禁止直接调用 crypto / Date.now，以保持纯函数、便于测试。
  */
 
 /** 生成唯一 id。crypto.randomUUID 是 Web 标准，浏览器与 Node 均可用。 */

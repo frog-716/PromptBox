@@ -68,7 +68,7 @@ export function useLibrary() {
       }
       return true;
     } catch (error) {
-      console.error('[Prompt Box] 读取本地数据失败：', error);
+      console.error('[PromptBox] 读取本地数据失败：', error);
       if (revisionAtStart === syncRevision) loadError.value = true;
       return false;
     }

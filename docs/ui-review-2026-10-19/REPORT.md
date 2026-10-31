@@ -1,4 +1,4 @@
-# Prompt-Box 前端设计诊断报告
+# PromptBox 前端设计诊断报告
 
 - 日期：2026-10-19
 - 范围：侧边栏（sidepanel）、独立标签页（library）、设置页（options）三个界面 + 共享组件 + `src/ui/styles/global.css` 设计令牌

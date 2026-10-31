@@ -88,7 +88,7 @@ async function handleSave(draft: PromptDraft, asNew = false): Promise<void> {
     closeEditor();
     show(isEdit ? '已更新' : '已保存');
   } catch (error) {
-    console.error('[Prompt Box] 保存提示词失败：', error);
+    console.error('[PromptBox] 保存提示词失败：', error);
     saveError.value = '保存失败，草稿已保留，请重试。';
     show(saveError.value, { tone: 'error' });
   } finally {
@@ -110,7 +110,7 @@ async function handleRemove(prompt: Prompt): Promise<void> {
     await deletePrompt(prompt.id);
     show('已删除');
   } catch (error) {
-    console.error('[Prompt Box] 删除提示词失败：', error);
+    console.error('[PromptBox] 删除提示词失败：', error);
     show('删除失败，数据未更改', { tone: 'error' });
   }
 }

@@ -14,10 +14,10 @@ export const SCHEMA_VERSION = 1;
 export const COPY_FEEDBACK_MS = 1200;
 
 /** 右键菜单项 id。 */
-export const MENU_SAVE_SELECTION_ID = 'prompt-box-save-selection';
+export const MENU_SAVE_SELECTION_ID = 'promptbox-save-selection';
 
 /** 通过右键菜单保存时，自动截取标题的最大长度。 */
 export const AUTO_TITLE_MAX_LENGTH = 24;
 
 /** Markdown 导出文件的命名前缀。 */
-export const EXPORT_FILE_PREFIX = 'prompt-box';
+export const EXPORT_FILE_PREFIX = 'promptbox';

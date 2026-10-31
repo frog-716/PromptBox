@@ -1,5 +1,5 @@
 {
-  "name": "prompt-box",
+  "name": "promptbox",
   "version": "0.1.0",
   "description": "极简提示词管理工具 — 随时记录、分类管理、一键取用",
   "private": true,
