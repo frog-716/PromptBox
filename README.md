@@ -87,7 +87,7 @@ src/
 
 ## License
 
-采用 [MIT License](https://opensource.org/licenses/MIT)。
+采用 [MIT License](./LICENSE)。
 
 ---
 

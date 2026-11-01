@@ -11,6 +11,9 @@ stats.html
 # 运营内容草稿（未公开的小红书帖子，不进公开仓库）
 docs/social/
 
+# 竞品与内部评估草稿（含第三方定价调研，不对外发布）
+docs/competitive-review-*.md
+
 # 个人数据防护：提示词库导出 / 快照 / 迁移基线，绝不入库
 library.json
 library-*.json

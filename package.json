@@ -5,6 +5,26 @@
   "private": true,
   "type": "module",
   "license": "MIT",
+  "author": "frog-716",
+  "homepage": "https://github.com/frog-716/PromptBox#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frog-716/PromptBox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/frog-716/PromptBox/issues"
+  },
+  "keywords": [
+    "chrome-extension",
+    "manifest-v3",
+    "prompt-manager",
+    "prompt-library",
+    "local-first",
+    "vue"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "wxt",
     "build": "wxt build",

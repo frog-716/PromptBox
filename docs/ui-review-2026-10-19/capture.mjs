@@ -7,10 +7,14 @@ import { spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { mkdtempSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { join, resolve } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const EXT_DIR = resolve('/Users/frog/Projects/PromptBox/.output/chrome-local/chrome-mv3');
-const OUT_DIR = resolve('/Users/frog/Projects/PromptBox/docs/ui-review-2026-10-19/shots');
+// 以脚本自身位置推导项目根，换机器、换目录都能直接跑
+const HERE = dirname(fileURLToPath(import.meta.url));
+const ROOT = resolve(HERE, '../..');
+const EXT_DIR = resolve(ROOT, '.output/chrome-local/chrome-mv3');
+const OUT_DIR = resolve(HERE, 'shots');
 
 const CHROME_CANDIDATES = [
   // 品牌版 Chrome 137+ 已忽略 --load-extension，优先用 Playwright 缓存的 Chromium
